@@ -59,7 +59,6 @@ async (req, res) => {
 
         await user.save();
 
-        
         const payload = {
             user: {
                 id: user.id

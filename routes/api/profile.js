@@ -9,7 +9,6 @@ const { check, validationResult } = require('express-validator');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-const { response } = require('express');
 
 // @route     GET api/profile/me
 // @desc      Get current users profile
@@ -24,6 +23,7 @@ router.get('/me', auth, async (req, res) => {
         if (!profile) {
             return res.status(400).json({ msg: 'There is no profile for this user' });
         }
+        res.json(profile);
    
     } catch (error) {
         console.error(error.message);

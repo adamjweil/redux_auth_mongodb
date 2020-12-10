@@ -89,7 +89,7 @@ export const addExperience = (formData, history) => async dispatch => {
             payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
-}
+};
 
 // Add Education
 export const addEducation = (formData, history) => async dispatch => {
@@ -106,7 +106,7 @@ export const addEducation = (formData, history) => async dispatch => {
             payload: res.data
         });
 
-        dispatch(setAlert('Educationo Added', 'success'));
+        dispatch(setAlert('Education Added', 'success'));
 
         history.push('/dashboard');
     } catch (err) {
@@ -121,5 +121,7 @@ export const addEducation = (formData, history) => async dispatch => {
             payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
-}
+};
+
+
 

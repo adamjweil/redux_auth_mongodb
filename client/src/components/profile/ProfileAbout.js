@@ -12,7 +12,7 @@ const ProfileAbout = ({
         <div class="profile-about bg-light p-2">
             {bio && (
                 <Fragment>
-                    <h2 class="text-primary">{username.trim().split(' ')[0]}s Bio</h2>
+                    <h2 class="text-primary">{username && username.trim().split(' ')[0]}s Bio</h2>
                     <p>
                     {bio}
                     </p>
@@ -34,6 +34,6 @@ const ProfileAbout = ({
 
 ProfileAbout.propTypes = {
     profile: PropTypes.object.isRequired
-}
+};
 
-export default ProfileAbout
+export default ProfileAbout;

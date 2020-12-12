@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import { getProfiles } from '../../actions/profile'; 
 import ProfileItem from './ProfileItem';
@@ -18,12 +18,12 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                 <Fragment>
                     <h1 className='large text-primary'>Developers</h1>
                     <p className='lead'>
-                        <i className='fab fa-connectdevelop'></i>Browse and connect with other developers
+                        <i className='far fa-connect-develop'></i>Browse and connect with other developers
                     </p>
                     <div className='profiles'>
                         {profiles.length > 0 ? (
                             profiles.map(profile => (
-                                <ProfileItem key={profile.id} profile={profile} />
+                                <ProfileItem key={profile._id} profile={profile} />
                             ))
                         ) : <h4>No profiles found </h4>}
                     </div>

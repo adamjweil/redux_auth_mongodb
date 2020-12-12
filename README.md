@@ -1,2 +1,4 @@
 ## SECTION 6
- - Video #58
+ - Video #68
+
+ # Finished thru creating comments on posts

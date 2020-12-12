@@ -17,7 +17,7 @@ const Login = ({ login, isAuthenticated }) => {
     const onSubmit = async e => {
         e.preventDefault();
         login(email, password);
-        // loadUser();
+        loadUser();
     };
 
     // Redirect if logged in
@@ -72,4 +72,4 @@ const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(mapStateToProps, { login, loadUser })(Login);

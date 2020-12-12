@@ -159,8 +159,13 @@ router.put('/unlike/:id', auth, async (req, res) => {
 // @route     POST api/posts/comment/:id
 // @desc      Comment on a post
 // @access    Private
-router.post('/comment/:id', [ auth, [
-    check('text', 'Text is required.').not().isEmpty()
+router.post('/comment/:id', 
+    [ 
+        auth,
+        [
+         check('text', 'Text is required.')
+         .not()
+         .isEmpty()
     ]
  ], 
  async (req, res) => {
@@ -184,7 +189,7 @@ router.post('/comment/:id', [ auth, [
             
             await post.save();
 
-            res.json(post);
+            res.json(post.comments);
         } catch (err) {
             console.error(err.message);
             res.status(500).send('Server Error');

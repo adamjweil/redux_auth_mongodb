@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment } from 'react';
 import twitter from './img/twitter.png';
 
 export default () => (

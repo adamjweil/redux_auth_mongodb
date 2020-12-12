@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addPost } from '../../actions/post';
+import { addComment } from '../../actions/post';
 
-const PostForm = ({ addPost }) => {
+
+const CommentForm = ({ postId, addComment }) => {
     const [text, setText] = useState('');
 
     return (
         <div className="post-form">
             <div className="bg-primary p">
-            <h3>Say something....</h3>
+            <h3>Leave A Comment</h3>
             </div>
             <form 
                 className="form my-1" 
                 onSubmit={e => {
                     e.preventDefault();
-                    addPost({ text });
+                    addComment(postId, { text });
                     setText('');
                 }}
             >
@@ -31,11 +32,11 @@ const PostForm = ({ addPost }) => {
             <input type="submit" className="btn btn-dark my-1" value="Submit" />
             </form>
       </div>
-    );
+    )
+}
+
+CommentForm.propTypes = {
+    addComment: PropTypes.func.isRequired,
 };
 
-PostForm.propTypes = {
-    addPost: PropTypes.func.isRequired
-};
-
-export default connect(null, { addPost })(PostForm);
+export default connect(null, { addComment })(CommentForm);
